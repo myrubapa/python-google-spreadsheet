@@ -271,7 +271,7 @@ class Worksheet(object):
         """
         entry = self.gd_client.UpdateCell(row, col, value, **self.keys)
         if not isinstance(entry, gdata.spreadsheet.SpreadsheetsCell):
-            raise WorksheetException("Row insert failed: '{0}'".format(entry))
+            raise WorksheetException("Cell insert failed: '{0}'".format(entry))
         return True
         
     def insert_row(self, row_data):
