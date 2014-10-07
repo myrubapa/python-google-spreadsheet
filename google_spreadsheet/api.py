@@ -258,7 +258,7 @@ class Worksheet(object):
         return self._row_to_dict(entry)
     
     def update_cell(self, row, col, value):
-        """Update column
+        """Update field by row id and column id
 
         :param row:
             Spreadsheet row number.
