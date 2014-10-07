@@ -256,7 +256,24 @@ class Worksheet(object):
             raise WorksheetException("Row update failed: '{0}'".format(entry))
         self.entries[index] = entry
         return self._row_to_dict(entry)
+    
+    def update_cell(self, row, col, value):
+        """Update column
 
+        :param row:
+            Spreadsheet row number.
+        :param col,
+            Spreadsheet column number
+        :param value
+            Set new value field
+        :return:
+            A row dictionary for the inserted row.
+        """
+        entry = self.gd_client.UpdateCell(row, col, value, **self.keys)
+        if not isinstance(entry, gdata.spreadsheet.SpreadsheetsCell):
+            raise WorksheetException("Row insert failed: '{0}'".format(entry))
+        return True
+        
     def insert_row(self, row_data):
         """Insert Row
 
