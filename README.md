@@ -45,6 +45,8 @@ Working with a Worksheet:
     >>> rows = sheet.get_rows()
     >>> len(rows)
     18
+    >>> sheet.update_cell(1, 1, 'New Name')
+    True
     >>> row_to_update = rows[0]
     >>> row_to_update['name'] = 'New Name'
     >>> sheet.update_row(row_to_update)
